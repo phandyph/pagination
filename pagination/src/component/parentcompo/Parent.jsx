@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Displaypagination from "../displaypagination/Displaypagination";
+import Displaycard from "../displaycard/Displaycard";
 import './Parent.css';
 const URL = 'https://jsonplaceholder.typicode.com/users';
 
@@ -9,7 +10,8 @@ const Parent = () => {
     const fivePages = Array.from(Array(users.length/2).keys())
     const [currentPage, setCurrentPage] = useState('');
     const [twoUsers, setTwoUsers] = useState([]);
-
+    const [resDetail, setResDetail] = useState({});
+    const [detailPage, setDetailPage] = useState('')
 
     /**
      * Fetch data from URL of users (contain 10 objects.)
@@ -43,6 +45,16 @@ const Parent = () => {
         setTwoUsers([users[para*2], users[para*2+1]])
     }
 
+
+    const seeDetail = (id) => {
+        twoUsers.forEach((d)=>{
+            if (d.id === id) {
+                setResDetail(d)
+                setDetailPage(d.id)
+            }
+        })
+    }
+
     return (
         <div className="new-paginate">
             <Displaypagination 
@@ -52,6 +64,15 @@ const Parent = () => {
                 onClickNextPage={onClickNextPage}
                 currentPage={currentPage}
             />
+            <div className="child-pagin">
+                <Displaycard
+                    twoUsers={twoUsers}
+                    seeDetail={seeDetail}
+                    detailPage={detailPage}
+                />
+            </div>
+
+
         </div>
     )
 }
