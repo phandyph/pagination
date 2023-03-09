@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Displaypagination from "../displaypagination/Displaypagination";
 import Displaycard from "../displaycard/Displaycard";
+import Displaydetail from "../displaydetail/Displaydetail";
 import './Parent.css';
 const URL = 'https://jsonplaceholder.typicode.com/users';
 
@@ -27,22 +28,23 @@ const Parent = () => {
         })
     }, [])
 
-
     const onClickCurrentPage = (para) => {
         setCurrentPage(para)
         setTwoUsers([users[para*2], users[para*2+1]])
-
+        setResDetail({})
     }
 
     const onClickPreviousPage = (para) => {
         setCurrentPage(para)
         setTwoUsers([users[para*2], users[para*2+1]])
+        setResDetail({})
 
     }
 
     const onClickNextPage = (para) => {
         setCurrentPage(para)
         setTwoUsers([users[para*2], users[para*2+1]])
+        setResDetail({})
     }
 
 
@@ -69,6 +71,10 @@ const Parent = () => {
                     twoUsers={twoUsers}
                     seeDetail={seeDetail}
                     detailPage={detailPage}
+                />
+
+                <Displaydetail
+                    resDetail={resDetail}
                 />
             </div>
         </div>
