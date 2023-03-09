@@ -8,9 +8,9 @@ const Displaypagination = ({
     currentPage
 }) => {
     return (
-        <div className='mt-3'>
+        <div>
             <div className='paginate'>
-                <button disabled={currentPage === 0} onClick={()=>onClickPreviousPage(currentPage-1)} className='pagi'>{'<'}</button>
+                <button className='pagi' disabled={currentPage === 0} onClick={()=>onClickPreviousPage(currentPage-1)}>{'<'}</button>
                 {fivePages.map((page,i)=>{
                     return (
                         <div className="pages" key={i}>
@@ -18,7 +18,7 @@ const Displaypagination = ({
                         </div>
                     )
                 })}            
-                <button disabled={currentPage === 4} onClick={()=>onClickNextPage(currentPage+1)} className='pagi'>{'>'}</button>
+                <button className='pagi' disabled={currentPage === 4} onClick={()=>onClickNextPage(currentPage+1)}>{'>'}</button>
             </div>
         </div>
     )

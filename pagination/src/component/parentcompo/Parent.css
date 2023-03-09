@@ -4,9 +4,11 @@
 }
 
 .new-paginate {
-    width: 80%;
+    width: 60%;
     margin: auto;
     padding: 10px;
+    background-color: rgb(176, 217, 203);
+    border-radius: 5px;
 }
 
 .child-pagin {

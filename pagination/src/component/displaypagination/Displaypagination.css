@@ -2,7 +2,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    
 }
 
 .pagi {
@@ -10,8 +9,9 @@
     height: 50px;
     text-align: center;
     line-height: 50px;
-    background-color: aqua;
+    background-color: rgb(201, 228, 228);
     font-size: 1.5rem;
     border: 1px solid black;
     cursor: pointer;
+    border-radius: 2px;
 }
