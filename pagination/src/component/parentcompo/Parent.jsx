@@ -71,8 +71,6 @@ const Parent = () => {
                     detailPage={detailPage}
                 />
             </div>
-
-
         </div>
     )
 }
