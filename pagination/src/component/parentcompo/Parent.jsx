@@ -50,8 +50,6 @@ const Parent = () => {
                 onClickCurrentPage={onClickCurrentPage}
                 onClickPreviousPage={onClickPreviousPage}
                 onClickNextPage={onClickNextPage}
-                users={users}
-                twoUsers={twoUsers}
                 currentPage={currentPage}
             />
         </div>
