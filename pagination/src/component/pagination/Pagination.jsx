@@ -2,16 +2,16 @@ import { useState, useEffect } from "react";
 import Displaypagination from "../displaypagination/Displaypagination";
 import Displaycard from "../displaycard/Displaycard";
 import Displaydetail from "../displaydetail/Displaydetail";
-import './Parent.css';
+import './Pagination.css';
 const URL = 'https://jsonplaceholder.typicode.com/users';
 
-const Parent = () => {
+const Pagination = () => {
     const [loading, setLoading] = useState(true);
     const [users, setUsers] = useState([])
     const fivePages = Array.from(Array(users.length/2).keys())
     const [currentPage, setCurrentPage] = useState('');
-    const [twoUsers, setTwoUsers] = useState([]);
-    const [resDetail, setResDetail] = useState({});
+    const [twoItems, setTwoItems] = useState([]);
+    const [userDetail, setUserDetail] = useState({});
     const [detailPage, setDetailPage] = useState('')
 
     /**
@@ -30,28 +30,28 @@ const Parent = () => {
 
     const onClickCurrentPage = (para) => {
         setCurrentPage(para)
-        setTwoUsers([users[para*2], users[para*2+1]])
-        setResDetail({})
+        setTwoItems([users[para*2], users[para*2+1]])
+        setUserDetail({})
     }
 
     const onClickPreviousPage = (para) => {
         setCurrentPage(para)
-        setTwoUsers([users[para*2], users[para*2+1]])
-        setResDetail({})
+        setTwoItems([users[para*2], users[para*2+1]])
+        setUserDetail({})
 
     }
 
     const onClickNextPage = (para) => {
         setCurrentPage(para)
-        setTwoUsers([users[para*2], users[para*2+1]])
-        setResDetail({})
+        setTwoItems([users[para*2], users[para*2+1]])
+        setUserDetail({})
     }
 
 
     const seeDetail = (id) => {
-        twoUsers.forEach((d)=>{
+        twoItems.forEach((d)=>{
             if (d.id === id) {
-                setResDetail(d)
+                setUserDetail(d)
                 setDetailPage(d.id)
             }
         })
@@ -68,17 +68,17 @@ const Parent = () => {
             />
             <div className="child-pagin">
                 <Displaycard
-                    twoUsers={twoUsers}
+                    twoItems={twoItems}
                     seeDetail={seeDetail}
                     detailPage={detailPage}
                 />
 
                 <Displaydetail
-                    resDetail={resDetail}
+                    userDetail={userDetail}
                 />
             </div>
         </div>
     )
 }
 
-export default Parent;
+export default Pagination;

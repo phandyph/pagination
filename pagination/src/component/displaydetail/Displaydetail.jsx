@@ -1,11 +1,11 @@
 import './Displaydetail.css';
 
-const Displaydetail = ({resDetail}) => {
+const Displaydetail = ({userDetail}) => {
     return (
         <div className='pagin-res'>
-                <p>{resDetail.id}</p>
-                <p>{resDetail.username}</p>
-                <p>{resDetail.email}</p>
+                <p>{userDetail.id}</p>
+                <p>{userDetail.username}</p>
+                <p>{userDetail.email}</p>
         </div>
     )
 }
