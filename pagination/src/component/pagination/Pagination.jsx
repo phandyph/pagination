@@ -28,22 +28,22 @@ const Pagination = () => {
         })
     }, [])
 
-    const onClickCurrentPage = (para) => {
-        setCurrentPage(para)
-        setTwoItems([users[para*2], users[para*2+1]])
+    const onClickCurrentPage = (page) => {
+        setCurrentPage(page)
+        setTwoItems([users[page*2], users[page*2+1]])
         setUserDetail({})
     }
 
-    const onClickPreviousPage = (para) => {
-        setCurrentPage(para)
-        setTwoItems([users[para*2], users[para*2+1]])
+    const onClickPreviousPage = (page) => {
+        setCurrentPage(page)
+        setTwoItems([users[page*2], users[page*2+1]])
         setUserDetail({})
 
     }
 
-    const onClickNextPage = (para) => {
-        setCurrentPage(para)
-        setTwoItems([users[para*2], users[para*2+1]])
+    const onClickNextPage = (page) => {
+        setCurrentPage(page)
+        setTwoItems([users[page*2], users[page*2+1]])
         setUserDetail({})
     }
 
